@@ -39,6 +39,7 @@ struct ContentView: View {
                               format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                     .keyboardType(.decimalPad)
                     .focused($amaountIsFocused)
+                    .foregroundColor(tipPercentage == 0 ? .red : .primary)
                     
                     Picker("Number of people", selection: $numberOfPeople) {
                         ForEach(2..<100) {
